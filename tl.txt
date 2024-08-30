@@ -1,1 +1,5 @@
 Any text
+open
+edit
+save
+close
