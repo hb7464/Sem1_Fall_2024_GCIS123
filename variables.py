@@ -46,9 +46,9 @@ def variables_prac():
     numofdaysinyear = 365 
     nameoffirstpet = 'yguhj'
     first5digitsofpi = 3.1415
-    print(ageinmonths)
-    print(numofdaysinyear)
-    print(nameoffirstpet)
-    print(first5digitsofpi)
+    print("Age in months: ",ageinmonths)
+    print("Number of days in a year: ",numofdaysinyear)
+    print("Name of first pet: ",nameoffirstpet)
+    print("First 5 digits of Pi: ",first5digitsofpi)
 
 variables_prac()
