@@ -71,7 +71,7 @@ expression types:
 """
 
 def expressions_prac():
-    Literal = 'str'
+    Literal = 'str is short for string'
     Addition = 1+4
     Exponent = 3**7
     Floor_division = 12//5
