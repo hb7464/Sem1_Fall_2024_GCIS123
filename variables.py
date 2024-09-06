@@ -85,4 +85,3 @@ def expressions_prac():
     print("Mod: ",Mod)
     print("Pemdas: ",Pemdas)
     print("Mixed Operations: ", mix)
-expressions_prac()
