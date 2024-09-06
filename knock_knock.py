@@ -27,3 +27,19 @@ def main():
     joke()
 
 main()
+
+
+
+'''
+import random
+kkjokes = [["Diane","I'm Diane to come in, open the door."],["Omelet","Omelet myself in."],["Juicy","Juicy the look on your face? Ridiculous."],["Doris","Doris locked, why do you think I’m knocking?"]]
+for i in range(2):
+    a=random.randint(0,3)
+    L = kkjokes[a]
+    knock_knock = input("Knock knock: ")
+    print(knock_knock)
+    p2= L[0] + ": "
+    part2 = input(p2)
+    print(part2)
+    print(L[1])
+'''
