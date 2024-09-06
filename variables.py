@@ -51,4 +51,38 @@ def variables_prac():
     print("Name of first pet: ",nameoffirstpet)
     print("First 5 digits of Pi: ",first5digitsofpi)
 
-variables_prac()
+"""Expressions allow your programs to compute or combine values
+dynamically at runtime. These values may change from one run to
+the next! Try initializing a few variables using expressions.
+● Add a new function called “expressions_practice” to your
+“variables.py” program and:
+○ Declare and initialize a variable with a descriptive name for each of the following
+expression types:
+■ Literal
+■ Addition
+■ Exponent
+■ Floor division
+■ Mod
+■ Use parentheses to perform addition and subtraction before multiplication
+■ A mix of at least four different arithmetic operators
+○ Print each of the variables.
+● Don’t forget to call your function.
+● Once you have verified that your program is working, push it to GitHub.
+"""
+
+def expressions_prac():
+    Literal = 'str'
+    Addition = 1+4
+    Exponent = 3**7
+    Floor_division = 12//5
+    Mod = 279%3
+    Pemdas = (24+2)*4
+    mix = (26-2)*3/4
+    print("Literal: ", Literal)
+    print("Addition: ",Addition)
+    print("Exponent: ", Exponent)
+    print("Floor division: ", Floor_division)
+    print("Mod: ",Mod)
+    print("Pemdas: ",Pemdas)
+    print("Mixed Operations: ", mix)
+expressions_prac()
