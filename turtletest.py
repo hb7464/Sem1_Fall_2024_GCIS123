@@ -27,7 +27,10 @@ def test_drive():
     circle(25)
     input()
 
+def turtle_circle():
+    circle(34.5)
+
 def main():
-    test_drive()
+    turtle_circle()
 
 main()
