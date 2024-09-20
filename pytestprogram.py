@@ -17,3 +17,6 @@ def test_check_guess_correct():
 
 def test_guess_too_low():
     assert check_guess(-23020439043094,5) == 0
+
+if __name__ =='__main__':
+    main()
