@@ -1,65 +1,32 @@
 import turtle as t
 
-def table_leg(th,tc):
-
-    '''A function designed to create 
-    the leg piece of a table'''
-    
-    t.down()
-    t.begin_fill()
-    t.forward(th)
-    t.left(90)
-    t.forward(10)
-    t.left(90)
-    t.forward(th)
-    t.left(90)
-    t.forward(10)
+def table(tw,tc): # this is a function for the table top
     t.fillcolor(tc)
-    t.end_fill()
-    t.up()
-
-def table(tw,tc):
-
-    '''function to create the 2d 
-    table with 4 legs'''
-
-#This portion of code is to create the table top
-
-    strt = tw//2
-
     t.begin_fill()
-    t.up()
-    t.goto(-(strt),0)
-    t.down()
-    t.forward(tw)
+    t.forward(tw//2) # we are dividing by 2 so we can draw the right top side of the table
     t.right(90)
     t.forward(10)
     t.right(90)
     t.forward(tw)
     t.right(90)
     t.forward(10)
-    t.fillcolor(tc)
+    t.right(90)
+    t.forward(tw//2) # we are dividing by 2 so we can draw the left top side of the table
     t.end_fill()
-    
-#This is the portion of code dedicated to creating the legs of the table
-    
-    tll = float(input("Enter the length of the legs: ")) # asking the user for their preferences
-    tlc = input("Enter the color of the legs: ") # asking the user for their preferences
 
-    t.up()
-    t.goto(-(strt-10),-10)
-    t.right(180)
-    table_leg(tll,tlc)
-    t.goto(-40,-10)
-    t.left(90)
-    table_leg(tll,tlc)
-    t.goto(30,-10)
-    t.left(90)
-    table_leg(tll,tlc)
-    t.goto((strt-20),-10)
-    t.left(90)
-    table_leg(tll,tlc)
-
+def tablelegs(tw,tll,tlc):
+    t.penup()
+    t.goto(tw//2,-10) # we are dividing by 2 so we can go to the bottom right corner of the table
+    t.fillcolor(tlc)
+    t.begin_fill()
+    t.pendown()
+    t.setheading(270)
+    t.forward(tll)
+    t.right(90)
+    t.forward(10)
+    t.right(90)
+    t.forward(tll)
+    t.end_fill()
 
 def cakedetails(): # here we are asking the user for their preferences so they can customize their cake
     cw = float(input("Enter a width for the layers (less than table width): "))
@@ -102,32 +69,13 @@ def decoration1(cw,height): # this makes four white semi-circles on the top laye
     t.circle(cw/8,180)
     t.end_fill()
 
-def candle(height):
-    
-    '''The function to create a candle 
-    on top of the cake'''
-    t.up()
-    t.goto(-2.5,height-10)
-    t.down()
+def decoration2(height): # this makes a red ball on top of the cake in the middle
+    t.penup()
+    t.goto(10,height)
+    t.fillcolor("red")
     t.begin_fill()
-    t.forward(15)
-    t.right(90)
-    t.forward(5)
-    t.right(90)
-    t.forward(15)
-    t.right(90)
-    t.forward(5)
-    t.fillcolor('dark red')
+    t.circle(10)
     t.end_fill()
-    t.up()
-    t.goto(0,height-10)
-    t.right(90)
-    t.forward(15)
-    t.down()
-    t.pencolor('yellow')
-    t.forward(5)
-    t.up()
-    t.goto(100,100)
 
 def main():
     t.bgcolor("skyblue") # this is to make the background color skyblue
@@ -137,14 +85,21 @@ def main():
     tc = input("Enter the color of the table: ") # asking the user for their preferences
     table(tw,tc)
 
+    tll = float(input("Enter the length of the legs: ")) # asking the user for their preferences
+    tlc = input("Enter the color of the legs: ") # asking the user for their preferences
+    tablelegs(tw,tll,tlc)
+    tablelegs(tw//2,tll,tlc)
+    tablelegs(-tw//2 + 20,tll,tlc)
+    tablelegs(-tw + 20,tll,tlc)
+
     cw,ch1,ch2,ch3,cc1,cc2,cc3 = cakedetails() # this is were the return function is being used for 
-    t.speed(1)
+    
     if cw > tw: # here if the cake width is larger than the table width it will print that and turtle will crash
         print("Cake is too big!!")
         return
     else:
         print("Preparing Cake!!") # if it isnt it will print this and continue with the rest of the code
-        t.right(90)
+        
         height = 0  # this is so the cake can start on top of the table top
         cakelayers(cw,ch1,cc1,height)
         height += ch1 # this is to assign a new value to the same variable
@@ -158,7 +113,7 @@ def main():
         decoration1(cw,height)
         height += 10
         
-        candle(height)
+        decoration2(height)
 
         print("Happy Birthday!!")
     
