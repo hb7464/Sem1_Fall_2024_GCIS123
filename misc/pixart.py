@@ -25,11 +25,21 @@ def box():
     t.up()
     t.forward(Pixel_Size)
 
-def main():
-    intialization()
+def row():
     c=0
-    while c< COLUMNS:
+    while c < COLUMNS:
         box()
+        c+=1
+        
+def main():
+    t.Screen().setup(width=0.5, height=0.75, startx=None, starty=None)
+    intialization()
+    i = 0
+    while i < ROWS:
+        i+=1
+        t.up()
+        t.goto(-300,300-(i*Pixel_Size))
+        row()
     input()
 
 main()
