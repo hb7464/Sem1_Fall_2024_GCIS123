@@ -20,7 +20,14 @@ for i in range(10):
         b+=L.pop(d)
 
     print(b)
-'''
+
 
 a = input("Whats your name? \n")
-print("Hi ",a,"!",sep='')   
+print("Hi ",a,"!",sep='')
+'''
+
+file = open(r'C:\Users\hisha\gcis123\hb7464\misc\tl.txt')
+
+for line in file:
+    print(line.strip())
+file.close()
