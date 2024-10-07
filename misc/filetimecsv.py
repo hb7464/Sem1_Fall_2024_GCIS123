@@ -6,16 +6,24 @@ random_lists = [
 ]
 
 def writecsv():
-    with open(r'hb7464\misc\testing.csv','w',newline='') as f:
+    with open(r'testing.csv','w',newline='') as f:
         a = csv.writer(f)
         a.writerows(random_lists)
 
 def readcsv():
-     with open(r'hb7464\misc\testing.csv') as f:
+     with open(r'testing.csv') as f:
         a = csv.reader(f)
+        lin=0
+        wrd=0
+        char=0
         for i in a:
-            print(i)
-
+            lin+=1
+            wrd+=len(i)
+            for j in i:
+                char+= len(j)
+        print(lin)
+        print(wrd)
+        print(char)
 def main():
     writecsv()
     readcsv()
