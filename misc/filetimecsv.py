@@ -24,9 +24,18 @@ def readcsv():
         print(lin)
         print(wrd)
         print(char)
+
+def addcsv():
+    with open(r'testing.csv') as f:
+        a = csv.reader(f)
+        next(a)
+        s = 0
+        for i in a:
+            s += int(i[-1])
+        print('Sum:',s)
+
 def main():
-    writecsv()
-    readcsv()
+    addcsv()
 
 if __name__ == '__main__':
     main()
