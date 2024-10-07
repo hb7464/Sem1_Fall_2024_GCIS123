@@ -1,7 +1,9 @@
 import random
+
 '''A collection of examples of 
 raising errors 
 '''
+
 def guessing_game():
     
     '''A function designed to ask the user to guess a number
@@ -25,24 +27,6 @@ def guessing_game():
         
     except ValueError:
         print("Invalid Input.")
-
-def file_opener():
-
-    '''A function to ask the user to input a 
-    file name and print its content if it exists
-    otherwise raise an error'''
-
-    try:
-        
-        filepath = input("Please enter the name of the file you want to open: ")
-        
-        with open('hb7464\\assignment 1\\tl.txt') as f:
-            for i in f:
-                print(i,end='')
-            print()
-
-    except FileNotFoundError:
-        print("File not found.")
 
 def password_func():
 
@@ -97,9 +81,7 @@ def division():
 
 def main():
     guessing_game()
-    password_func()
-    file_opener()
-    division()
+
 
 if __name__ == '__main__':
     main()
