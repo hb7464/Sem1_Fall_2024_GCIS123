@@ -31,7 +31,7 @@ def addcsv():
         next(a)
         s = 0
         for i in a:
-            s += int(i[-1])
+            s += int(i[-2])
         print('Sum:',s)
 
 def main():
