@@ -76,9 +76,35 @@ def draw_shape_from_string(turta):
         if color_string == '' or draw_line_from_string(color_string, turta) == False:
             break
         
+def draw_grid(turta):
+
+    turta.speed(0)
+    turta.up()
+    turta.goto(-200,100)
+
+    for i in range(20):
+        
+        turta.down()
+        if i%2 == 0:
+            draw_line_from_string('02020202020202020202',turta)
+        else:    
+            draw_line_from_string('20202020202020202020',turta)
+            
+        turta.up()
+        t.goto(-200,100-((i+1)*20))
+    
+def draw_shape_from_file(turta):
+    
+    filepath = input("Enter a file path: ")
+    with open(filepath) as file:
+        for line in file:
+            draw_shape_from_string(turta)
+    
 
 def main():
-    draw_shape_from_string(t)
+    t.tracer(False)
+    t.speed(0)
+    draw_shape_from_file(t)
     input()
 
 if __name__ == '__main__':
