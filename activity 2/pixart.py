@@ -106,7 +106,6 @@ def draw_shape_from_file(turta):
             draw_line_from_string(line, turta)
             Row += 1
     
-
 def main():
     t.tracer(False)
     t.speed(0)
