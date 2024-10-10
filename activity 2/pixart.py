@@ -105,6 +105,13 @@ def draw_grid(turta):
     
 def draw_shape_from_file(turta):
     
+    '''A function designed to take a file path 
+    from the user that contains characters that 
+    correlate to colors as listed in the get_colour
+    function and reads the file line by line feeding
+    it into the draw_line_from_string function to 
+    create a full image'''
+    
     filepath = input("Enter a file path: ")
     with open(filepath) as file:
         
