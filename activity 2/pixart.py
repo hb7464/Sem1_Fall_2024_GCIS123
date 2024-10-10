@@ -1,19 +1,10 @@
 import turtle as t
 
-def intialization():
-    global Pixel_Size 
-    global ROWS 
-    global COLUMNS
-    Pixel_Size = 30
-    ROWS = 20
-    COLUMNS = 20
-    t.speed(0)
-    t.up()
-    t.goto(-300,300)
-    t.pencolor('black')
-    t.fillcolor('white')
 
 def get_colour(n):
+
+    '''A function designed to take 
+    in a character and return a colour'''
 
     if n == '0':
         return 'black'
@@ -40,6 +31,9 @@ def get_colour(n):
 
 def draw_color_pixel(color_string, turta):
 
+    '''A function designed to draw a 
+    pixel with the inputed color'''
+    
     turta.setheading(0)
     turta.pencolor('black')
     turta.fillcolor(color_string)
@@ -53,14 +47,21 @@ def draw_color_pixel(color_string, turta):
     turta.end_fill()
 
 def draw_pixel(color_string_number, turta):
+    
+    '''A function that uses the draw_color_pixel function and get colour 
+    function in tandem to draw a pixel of a user desired color'''
+
     color_string = get_colour(color_string_number)
     draw_color_pixel(color_string,turta)
 
-def draw_line_from_string(color_string_line, turta):    #Check if its fine that i slightly changed the values
+def draw_line_from_string(color_string_line, turta):  
+
+    '''A function that takes a string of characters and 
+    draws a line using the draw_pixel function in a loop'''
     
     try:
 
-        for i in color_string_line:     #Ask professor whether i should use try&except or can i use if i not in statement
+        for i in color_string_line:    
             draw_pixel(i,turta)
     
     except:
@@ -68,6 +69,11 @@ def draw_line_from_string(color_string_line, turta):    #Check if its fine that 
         return False
 
 def draw_shape_from_string(turta):
+
+    '''A function designed that takes user input continuously
+     and draws pixel of the associated colors to the string 
+     until the user inputs an empty string or an invalid 
+     character not associated with any color'''
     
     while True:
         
@@ -77,6 +83,10 @@ def draw_shape_from_string(turta):
             break
         
 def draw_grid(turta):
+
+    '''A function that draws a grid with a 
+    black and red checkerboard pattern using 
+    the draw_line_from_string function'''
 
     turta.speed(0)
     turta.up()
