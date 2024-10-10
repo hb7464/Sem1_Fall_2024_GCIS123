@@ -97,8 +97,14 @@ def draw_shape_from_file(turta):
     
     filepath = input("Enter a file path: ")
     with open(filepath) as file:
+        
+        Row=0
+        
         for line in file:
-            draw_shape_from_string(turta)
+        
+            turta.goto(-200,200-(20*Row))
+            draw_line_from_string(line, turta)
+            Row += 1
     
 
 def main():
