@@ -87,7 +87,7 @@ def draw_shape_from_string(turta):
     while True:
         Row_Color = input("Enter a color string: ").strip()
         turta.penup()
-        turta.goto(-200, 200 - y)
+        turta.goto(xcoor, ycoor - y)
         turta.pendown()
         turta.speed(0)
         Rows = draw_line_from_string (Row_Color, turta)
