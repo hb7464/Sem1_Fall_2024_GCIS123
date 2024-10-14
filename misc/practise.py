@@ -36,5 +36,9 @@ def main():
 def main():
 	readnumbers()
 '''
+
+'''
 if __name__ == '__main__':
 	main()
+    
+'''
