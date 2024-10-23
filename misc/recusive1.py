@@ -9,6 +9,12 @@ def summing_with_recursion(num):
         return 1
     else:
         return num + summing_with_recursion(num-1)
+    
+def fact(num):
+    if num == 1:
+        return 1
+    else:
+        return num * fact(num-1)
 
 def main():
     num = 5 
