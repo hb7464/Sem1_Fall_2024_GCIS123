@@ -13,11 +13,14 @@ def linear_search(arr,val):
         return None,f'Time Elapsed: {elapsed}'
 
 def main():
-    arr = [10,23,555,333,22323,12]
-    print(linear_search(arr,333))
-    print(linear_search(arr,2))
-    print(linear_search(arr,23))
-    print(linear_search(arr,555))
-
-if __name__ == '__main__':
+    import random
+    arr=[]
+    for i in range(10):
+        arr.append(random.randint(1,10))
+    print(linear_search(arr,random.randint(1,10)))
+    print(linear_search(arr,random.randint(1,10)))
+    print(linear_search(arr,random.randint(1,10)))
+    print(linear_search(arr,random.randint(1,10)))
+    
+if __name__ == '__main__':  
     main()
