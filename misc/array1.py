@@ -22,14 +22,12 @@ def while_fill():
         arr[c] = c+1
         c+=1
     print(arr)
-    
+
 def rolldice():
     import random
     result = random.randint(1,6)
     print(f"The dice returned: {result}")
 
-if __name__ == '__main__':
-    main()
 def main():
     # making_arrays()
     # for_fill()
