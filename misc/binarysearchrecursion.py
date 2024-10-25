@@ -29,12 +29,22 @@ def binary_search(L,top,bot,val):
         return -1
     
 def main():
-
+ 
+    import random
+ 
     # L = eval(input("LIST: "))
     # val = int(input("Value to be found: "))
-    
-    L = [0,1,2,3,4,5,6,7,8,9]
-    val = 10
+ 
+    L=[]
+    for i in range(100):
+        L.append(random.randint(1,10000))
+ 
+    # L = [1,2,12,44,15664]
+    # val = 15664
+ 
+    L.sort()
+    val = random.randint(1,10000)
+ 
     top = len(L) - 1
     a=binary_search(L,top,0,val)
     
