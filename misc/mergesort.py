@@ -11,6 +11,7 @@ def splitarray(arr):
         arr[:mid] = splitarray(arr[:mid])
         arr[mid:] = splitarray(arr[mid:])
         arr[0:] = mergesort(arr[:mid],arr[mid:])
+        print(arr)
         return arr
 
 def mergesort(left,right):
@@ -30,10 +31,9 @@ def mergesort(left,right):
 def main():
     import time
     begin = time.perf_counter_ns()
-    L=[2,78,5,5,5698,14,265]
-    print(L)
+    L=[2,6,5,5,1,7,4,3]
+    print(f'Original Array {L}')
     splitarray(L)
-    print(L)
     end = time.perf_counter_ns()
     Total = end - begin
     print(f"Total Time Taken (in Nanoseconds): {Total}")
