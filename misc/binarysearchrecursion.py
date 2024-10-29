@@ -23,10 +23,6 @@ def binary_search(L,top,bot,val):
         top = mid - 1
         return binary_search(L,top,bot,val)
     
-    elif bot > top:
-     
-        return -1
-    
 def main():
  
     import random
