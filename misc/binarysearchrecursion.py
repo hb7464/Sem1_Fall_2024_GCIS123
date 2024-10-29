@@ -1,7 +1,6 @@
 def binary_search(L,top,bot,val):
 
     L.sort()
-    leng = len(L)
     mid = (top+bot)//2
     
     #print(f"{L} \n Top: {top} \n Bottom: {bot} \n Mid: {mid} \n MidValue: {L[mid]} \n Value: {val}")
