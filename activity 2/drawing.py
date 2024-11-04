@@ -10,12 +10,12 @@ def main():
     contains the relevant functions'''
 
     color = input("Enter a color number: ")
-    pa.draw_pixel(color)
+    pa.draw_pixel(color,turtle)
 
     pa.draw_shape_from_string(turtle)
     input("Do you want to continue? ")
     
-    pa.draw_grid()
+    pa.draw_grid(turtle)
     input("Do you want to continue? ")
 
     pa.draw_shape_from_file(turtle)
