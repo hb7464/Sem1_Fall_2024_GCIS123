@@ -3,7 +3,7 @@ def quicksort(arr):
     if len(arr) <= 1:
         return arr
     else:
-        pivot = arr.pop(len(arr)//2)
+        pivot = arr.pop((len(arr)-1)//2)
         print(pivot)
     
     more = []
