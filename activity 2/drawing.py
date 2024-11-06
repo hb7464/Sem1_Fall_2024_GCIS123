@@ -9,7 +9,6 @@ def main():
     '''The main function that 
     contains the relevant functions'''
 
-    turtle.speed(0)
     color = input("Enter a color number: ")
     pa.draw_pixel(color,turtle)
 
