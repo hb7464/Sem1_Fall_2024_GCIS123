@@ -92,14 +92,19 @@ def tictactoe():
             row = int(input("Which row do you want to play in: ")) - 1
             col = int(input("Which column do you want to play in: ")) - 1
             
+            if board[row][col] == '-':
+                board[row][col] = char
+                c+=1
+            else:
+                print("Can't play there, that is a filled square \n Try again.")
+                continue
+            
             if c%2 == 1:
                 xdraw(row,col)
     
             else:
                 odraw(row,col)
 
-            board[row][col] = char
-            c+=1
 
             if False == checker(board,char):
                 Full = False
