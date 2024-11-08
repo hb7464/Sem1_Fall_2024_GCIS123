@@ -25,6 +25,7 @@ def tictactoe():
             if board[row][col] == '-':
                 board[row][col] = char
                 c+=1
+                
             else:
                 print("Can't play there, that is a filled square \n Try again.")
                 continue
