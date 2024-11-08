@@ -25,7 +25,7 @@ def tictactoe():
             if board[row][col] == '-':
                 board[row][col] = char
                 c+=1
-                
+
             else:
                 print("Can't play there, that is a filled square \n Try again.")
                 continue
@@ -73,8 +73,8 @@ def checker(board,char):
 def printboard(board):
     for row in board:
         for col in row:
-            print(f'|{col}|',end = '')
-        print('\n---------')
+            print(f'|{col}|',end = '\n---------')
+
 def main():
 
     tictactoe()
