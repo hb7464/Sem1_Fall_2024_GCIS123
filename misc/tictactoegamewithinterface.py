@@ -98,13 +98,12 @@ def tictactoe():
             else:
                 print("Can't play there, that is a filled square \n Try again.")
                 continue
-            
+
             if c%2 == 1:
                 xdraw(row,col)
     
             else:
                 odraw(row,col)
-
 
             if False == checker(board,char):
                 Full = False
