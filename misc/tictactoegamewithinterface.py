@@ -65,12 +65,18 @@ def wincond(char):
     t.goto(-0,125)
     t.write(winmsg, move=False, align='center', font = ('arial',20,'normal'))
 
+def print_board(board):
+    print(f'{board[0][0]}|{board[0][1]}|{board[0][2]}', \
+          f'{board[1][0]}|{board[1][1]}|{board[1][2]}',\
+          f'{board[2][0]}|{board[2][1]}|{board[2][2]}',\
+          sep='\n--------------\n')
+    
 def tictactoe():
     
     try:
 
         board = [[None,None,None],[None,None,None],[None,None,None]]
-        c = 1
+        c = 2
         Full = True
         
         grid()
@@ -78,21 +84,21 @@ def tictactoe():
         while None in board[0] or None in board[1] or None in board[2]:
             
             print(f'Turn {c//2}')
-            for i in board:
-                print(i)
+            
+            print_board(board)
 
-            if c%2 == 1:
-                char = 'X'
+            if c%2 == 0:
+                char = '  X '
                 print("It is X's turn")
     
             else:
-                char = 'O'
+                char = '  O '
                 print("It is O's turn")
 
             row = int(input("Which row do you want to play in: ")) - 1
             col = int(input("Which column do you want to play in: ")) - 1
             
-            if board[row][col] == '-':
+            if board[row][col] == None:
                 board[row][col] = char
                 c+=1
             else:
@@ -111,7 +117,8 @@ def tictactoe():
 
         if Full == True:
             print('No one won :(')
-
+            
+        print_board(board)
         print('Game Over!')
         input()
 
@@ -123,25 +130,25 @@ def checker(board,char):
 
     if board[0][0] == board[1][1] == board[2][2] != None:
     
-        print(f'{char} wins!')
+        print(f'{char.strip()} wins!')
         wincond(char)
         return False
     
     elif board[0][2] == board[1][1] == board[2][1] != None:
     
-        print(f'{char} wins!')
+        print(f'{char.strip()} wins!')
         wincond(char)
         return False
     
     for i in range(3):
     
         if board[i][0] == board[i][1] == board[i][2] != None:
-            print(f'{char} wins!')
+            print(f'{char.strip()} wins!')
             wincond(char)
             return False
     
         elif board[0][i] == board[1][i] == board[2][i] != None:
-            print(f'{char} wins!')
+            print(f'{char.strip()} wins!')
             wincond(char)
             return False
 

@@ -71,9 +71,10 @@ def checker(board,char):
     return True
 
 def printboard(board):
-    for row in board:
-        for col in row:
-            print(f'|{col}|',end = '\n---------')
+    print(f'{board[0][0]}|{board[0][1]}|{board[0][2]}', \
+          f'{board[1][0]}|{board[1][1]}|{board[1][2]}',\
+          f'{board[2][0]}|{board[2][1]}|{board[2][2]}',\
+          sep='\n-----\n')
 
 def main():
 
