@@ -12,7 +12,7 @@ def check_first(adict,key):
     print(end-st)
 def main():
     check_first(adict,'EIIIIIII')
-    check_first(adict,'de')
+    check_first(adict,'Celine Dion')
 
 if __name__ == '__main__':
     main()
