@@ -1,6 +1,6 @@
 
 '''
-Mohammed Nagla's Repository link - 
+Mohammed Nagla's Repository link - https://github.com/mohamed19874/Mohamed-nagla
 Hishaam's Repository link - https://github.com/hb7464/hb7464 
 Munzir's Repository link - https://github.com/munzir1910/GCIS123 
 '''
@@ -108,19 +108,25 @@ def main():
     for ind in range(len(Arr)):
         if Arr[ind] == target:
             print(f'{target} is at {ind} index')
+            break
     else:
         print(f'{target} not found in array')
 
     end = time.perf_counter()
-    print(f'Time taken to find target: {end-start}')
+    print(f'Time taken to find target with linear search: {end-start}')
 
     #Timing binary search on the Array
-    from phase1_phase2 import binarysearch #importing the binary search function from phase 2
+    from phase1_phase2 import binary_search #importing the binary search function from phase 2
     start = time.perf_counter()
 
-    binarysearch(Arr,target)
+    print(f'{target} found at {binary_search(Arr,target)} index')
 
     end = time.perf_counter()
+
+    print(f'Time taken to find target with binary search: {end-start}')
+
+    '''Generally as the size of the array increases, binary search becomes increasingly faster
+    at finding the target value'''
 
 if __name__ == '__main__':
     main()
