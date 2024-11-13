@@ -9,24 +9,24 @@ def count_words():
             words = line.split()
        
             for word in words:
-                s = ''
+                word_without_special_characters_or_digits = ''
        
                 for letter in word:
        
                     if letter.lower() in 'qwertyuiopasdfghjklzxcvbnm':
-                        s += letter
+                        word_without_special_characters_or_digits += letter
        
-                if s in word_dict:
-                    word_dict[s] += 1
+                if word_without_special_characters_or_digits in word_dict:
+                    word_dict[word_without_special_characters_or_digits] += 1
        
                 else:
-                    word_dict[s] = 1
+                    word_dict[word_without_special_characters_or_digits] = 1
     
     return word_dict
 
 def main():
     word_dict = count_words()
-    
+
     for i in word_dict:
         print(f'{i}: {word_dict[i]}')
 
