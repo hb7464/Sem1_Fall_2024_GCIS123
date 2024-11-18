@@ -16,7 +16,11 @@ class Bicycle:
     def get_color(self):
         return self.__color
 
-bike = Bicycle('red',500)
-print(bike.get_gears())
-print(bike.get_color())
-print(bike.set_color('pink'))
+def main():
+    bike = Bicycle('red',500)
+    print(bike.get_gears())
+    print(bike.get_color())
+    print(bike.set_color('pink'))
+
+if __name__ == '__main__':
+    main()
