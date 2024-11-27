@@ -1,3 +1,9 @@
+'''
+Mohammed Nagla's Repository link - https://github.com/mohamed19874/Mohamed-nagla
+Hishaam's Repository link - https://github.com/hb7464/hb7464 
+Munzir's Repository link - https://github.com/munzir1910/GCIS123 
+'''
+
 class Polygon:
     
     '''Creating the class strucutre for any and all 
