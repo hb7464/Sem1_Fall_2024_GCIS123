@@ -5,23 +5,11 @@ def test_Polygon_initialization():
     polygon1 = Polygon("Triangle", [5,5,5])
     assert polygon1.get_name() == "Triangle"
     assert polygon1.get_sides() == [5,5,5]
-
-def test_get_name():
-    polygon1 = Polygon("Pentagon", [5,5,5])
-    assert polygon1.get_name() == "Pentagon"
-
-def test_set_name():
-    polygon1 = Polygon("Triangle", [5,5,5])
-    polygon1.set_name("Pentagon")    
-    assert polygon1.get_name() == "Pentagon"
-
-def test_get_sides():
-    polygon1 = Polygon("Triangle", [5,5,5])
-    assert polygon1.get_sides() == [5,5,5]
-
-def test_set_sides():
-    polygon1 = Polygon("Triangle", [5,5,5])
+    
+    polygon1.set_name("Pentagon")
     polygon1.set_sides([3,3,3,3,3])
+    
+    assert polygon1.get_name() == "Pentagon"
     assert polygon1.get_sides() == [3,3,3,3,3]
 
 def test_polygon_equality():
