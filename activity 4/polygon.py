@@ -6,27 +6,31 @@ class Polygon:
     
     __slots__ = ['__name', '__sides']   #Used to create private variables
 
-    def __init__(self, name, sides): #The initialization function with the name and list of sides
-        self.__name = name
-        self.__sides = sides
+    def __init__(self, name, sides):
+        """ initializing the attributes """
+        self.__name = name    # name of polygon
+        self.__sides = sides  # list of floats
 
-    def get_name(self): #The getter (accessor) function for the polygon's name
+    def get_name(self): #The getter (accessor) method for the polygon name
         return self.__name
-
-    def set_name(self,name): #The setter (mutator) function for the polygon's name
-        self.__name = name
-
-    def get_sides(self): #The getter (accessor) function for the polygon's sides
-        return self.__sides
-        
-    def set_sides(self,sides): #The setter (mutator) function for the polygon's sides
-        self.__sides = sides
-
-    def __eq__(self,other): #The equality checker function for 2 polygons
-        return self.__name == other.__name and self.__sides == other.__sides
     
-    def __ne__(self,other): #The inequality checker function for 2 polygons
-        return self.__name != other.__name or self.__sides != other.__sides
+    def set_name(self, newName): #The setter (mutator) method for the polygon name 
+        self.__name = newName
+
+    def get_sides(self): #The getter (accessor) method for the polygon sides
+        return self.__sides
+    
+    def set_sides(self, newSides): #The setter (mutator) method for the polygon sides
+        self.__sides = newSides
+
+    def __eq__(self, polygonTwo): #The equality method to check the equality of two Polygon objects
+        if type(self) == type(polygonTwo):  #First checks if the two objects are classes
+            return self.__name == polygonTwo.__name and self.__sides == polygonTwo.__sides  #Then checks equality of the attributes of the class
+        else:
+            return False
+        
+    def __ne__(self, polygonTwo):   #The inequality method to check the equality of two Polygon objects
+        return not self.__eq__(polygonTwo) #Using the __eq__ method and returning the opposite for efficiency
     
     def __str__(self): #defining the user-friendly representation of the polygon
         return f"{self.__name} with sides: {self.__sides}"
